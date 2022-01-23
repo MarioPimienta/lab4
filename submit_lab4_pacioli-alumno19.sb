@@ -1,0 +1,28 @@
+#!/bin/bash
+#SBATCH -p hpc-bio-pacioli
+#SBATCH --chdir=/home/alumno19/lab4
+#SBATCH -J MarioLab2
+#SBATCH --cpus-per-task=8
+#SBATCH --exclusive
+
+fichero1=$(cat ./Sample1.fastq)
+longitud1=${#fichero1}/19
+echo ${fichero1:0:$longitud1} > Samp1.fastq
+echo "Fichero 1 Cortado"
+echo "--------------------------"
+fichero2=$(cat ./Sample2.fastq)
+long2=${#fichero2}/19
+echo ${fichero2:0:$long2} > Samp2.fastq
+echo "Fichero 2 Cortado"
+echo "--------------------------"
+fichero3=$(cat ./Sample3.fastq)
+long3=${#fichero3}/19
+echo ${fichero3:0:$long3} > Samp3.fastq
+echo "Fichero 3 Cortado"
+echo "--------------------------"
+fichero4=$(cat ./Sample4.fastq)
+long4=${#fichero4}/19
+echo ${fichero4:0:$long4} > Samp4.fastq
+echo "Fichero 4 Cortado"
+
+
